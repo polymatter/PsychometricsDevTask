@@ -1,5 +1,7 @@
 import { Request, Response } from 'express';
+import * as userRepository from './user.repository';
 
-export const getUsers = (req: Request, res: Response) => {
-  res.json({ name: 'John Doe' });
-};
+export async function getUsers(req: Request, res: Response) {
+  const users = await userRepository.getUsers();
+  res.json(users);
+}
