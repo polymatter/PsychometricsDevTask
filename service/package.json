@@ -3,8 +3,13 @@
   "version": "1.0.0",
   "scripts": {
     "start": "node dist/server.js",
-    "build": "tsc",
-    "lint": "tslint -c tslint.json 'src/**/*.ts'"
+    "build": "npm run-script build:ts && npm run-script build:copy-data",
+    "build:ts": "tsc",
+    "build:copy-data": "mkdir -p ./dist/data; cp -R ./data/* ./dist/data/",
+    "lint": "tslint -c tslint.json 'src/**/*.ts'",
+    "watch": "concurrently -k -p \"[{name}]\" -n \"TypeScript,Node\" -c \"yellow.bold,cyan.bold,green.bold\" \"npm run-script watch:ts\" \"npm run-script watch:node\"",
+    "watch:node": "nodemon dist/server.js",
+    "watch:ts": "tsc -w"
   },
   "dependencies": {
     "body-parser": "^1.19.0",
@@ -20,6 +25,8 @@
     "@types/express-validator": "^3.0.0",
     "@types/node": "^12.0.10",
     "@types/sqlite3": "^3.1.5",
+    "concurrently": "^4.1.0",
+    "nodemon": "^1.19.1",
     "tslint": "5.18.0",
     "typescript": "^3.5.2"
   }
