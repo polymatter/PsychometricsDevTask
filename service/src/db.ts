@@ -4,32 +4,43 @@ import { verbose } from 'sqlite3';
 const sqlite3 = verbose();
 const db = new sqlite3.Database(':memory:');
 
-export const init = () => {
+export async function init() {
+  return readFixture(__dirname + '/data/fixture.sql').then((sql) => exec(sql));
+}
 
-  fs.readFile(__dirname + '/data/schema.sql', (err: NodeJS.ErrnoException, data: Buffer) => {
-    if (err) {
-      throw err;
-    }
-    console.log(data.toString());
+function readFixture(file: string): Promise<string> {
+  return new Promise(resolve => {
+    fs.readFile(file, (e, data: Buffer) => {
+      if (e) {
+        throw e;
+      }
+      resolve(data.toString());
+    });
   });
+}
 
-};
-
-db.serialize(() => {
-  db.run('CREATE TABLE lorem (info TEXT)');
-
-  const stmt = db.prepare('INSERT INTO lorem VALUES (?)');
-  for (let i = 0; i < 10; i++) {
-    stmt.run('Ipsum ' + i);
-  }
-  stmt.finalize();
-
-  db.each('SELECT rowid AS id, info FROM lorem', (err: Error, row: any) => {
-    console.log(row.id + ': ' + row.info);
+export async function exec(sql: string): Promise<number> {
+  return new Promise(resolve => {
+    db.exec(sql, (e) => {
+      if (e) {
+        throw e;
+      }
+      resolve();
+    });
   });
-});
+}
 
+export async function query<T>(sql: string, params?: any[]): Promise<T[]> {
+  return new Promise(resolve => {
+    db.all(sql, params, (err, rows: T[]) => {
+      if (err) {
+        throw err;
+      }
+      resolve(rows);
+    });
+  });
+}
 
-export const close = () => {
+export function close() {
   db.close();
-};
+}
