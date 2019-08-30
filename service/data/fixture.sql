@@ -2,13 +2,12 @@ BEGIN;
 
 CREATE TABLE IF NOT EXISTS `user`
 (
-    id         INT         NOT NULL,
+    id         INTEGER PRIMARY KEY AUTOINCREMENT,
     birth_date DATE        NOT NULL,
     first_name VARCHAR(14) NOT NULL,
     last_name  VARCHAR(16) NOT NULL,
     gender     VARCHAR(1)  NOT NULL,
-    created    DATE        NOT NULL,
-    PRIMARY KEY (id)
+    created    DATE        NOT NULL
 );
 
 INSERT INTO `user`

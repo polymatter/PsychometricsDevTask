@@ -10,6 +10,10 @@ app.set('port', process.env.PORT || 8080);
 app.use(compression());
 app.use(bodyParser.json());
 
-app.get('/user', userController.getUsers);
+app.get('/users', userController.getPage);
+app.get('/users/:userId', userController.get);
+app.post('/users', userController.save);
+app.put('/users/:userId', userController.save);
+app.delete('/users/:userId', userController.deleteOne);
 
 export default app;
