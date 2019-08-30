@@ -1,5 +1,5 @@
 import * as db from '../db';
-import { Page } from '../page/Page';
+import { Page } from '../page/page';
 import { User } from './user';
 
 export async function getPage(page: number, size: number): Promise<Page<User>> {
