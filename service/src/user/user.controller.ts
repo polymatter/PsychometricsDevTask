@@ -3,11 +3,12 @@ import { User } from './user';
 import * as userRepository from './user.repository';
 import { UserNotFoundException } from './user.repository';
 
-export async function getPage(req: Request, res: Response) {
+export async function getPage(req: Request, res: Response, next: NextFunction) {
   const page = Number(req.query.page) || 0;
   const size = Number(req.query.size) || 20;
   userRepository.getPage(page, size)
-    .then((page) => res.json(page));
+    .then((page) => res.json(page))
+    .catch((e) => handleErrors(e, res, next));
 }
 
 export async function get(req: Request, res: Response, next: NextFunction) {
