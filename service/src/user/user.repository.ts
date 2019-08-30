@@ -18,8 +18,8 @@ export async function getPage(pageable: Pageable): Promise<Page<User>> {
 }
 
 function countAll(): Promise<number> {
-  const sql = 'SELECT COUNT(*) countAll FROM `user`';
-  return db.query<any>(sql).then((r) => r.length === 1 ? r[0].count : null);
+  const sql = 'SELECT COUNT(*) c FROM `user`';
+  return db.query<any>(sql).then((r) => r.length === 1 ? r[0].c : null);
 }
 
 export function getById(userId: number): Promise<User | null> {
