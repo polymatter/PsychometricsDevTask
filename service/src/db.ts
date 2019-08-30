@@ -9,10 +9,10 @@ export async function init() {
 }
 
 function readFixture(file: string): Promise<string> {
-  return new Promise((resolve, reject) => {
+  return new Promise((resolve) => {
     fs.readFile(file, (e, data: Buffer) => {
       if (e) {
-        reject(e);
+        throw e;
       }
       resolve(data.toString());
     });
@@ -20,10 +20,10 @@ function readFixture(file: string): Promise<string> {
 }
 
 async function runScript(sql: string): Promise<number> {
-  return new Promise((resolve, reject) => {
+  return new Promise((resolve) => {
     db.exec(sql, (e) => {
       if (e) {
-        reject(e);
+        throw e;
       }
       resolve();
     });
@@ -31,10 +31,10 @@ async function runScript(sql: string): Promise<number> {
 }
 
 export async function exec(sql: string, params: any): Promise<RunResult> {
-  return new Promise((resolve, reject) => {
+  return new Promise((resolve) => {
     db.run(sql, params, function (e) {
       if (e) {
-        reject(e);
+        throw e;
       }
       resolve(this);
     });
@@ -42,10 +42,10 @@ export async function exec(sql: string, params: any): Promise<RunResult> {
 }
 
 export async function query<T>(sql: string, params?: any): Promise<T[]> {
-  return new Promise((resolve, reject) => {
+  return new Promise((resolve) => {
     db.all(sql, params, (e, rows: T[]) => {
       if (e) {
-        reject(e);
+        throw e;
       }
       resolve(rows);
     });

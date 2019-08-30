@@ -8,7 +8,7 @@
     "build:copy-data": "mkdir -p ./dist/data; cp -R ./data/* ./dist/data/",
     "lint": "tslint -c tslint.json 'src/**/*.ts'",
     "watch": "concurrently -k -p \"[{name}]\" -n \"TypeScript,Node\" -c \"yellow.bold,cyan.bold,green.bold\" \"npm run-script watch:ts\" \"npm run-script watch:node\"",
-    "watch:node": "nodemon dist/server.js",
+    "watch:node": "nodemon --signal SIGKILL dist/server.js",
     "watch:ts": "tsc -w"
   },
   "dependencies": {

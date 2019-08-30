@@ -28,7 +28,7 @@ export async function getById(userId: number): Promise<User | null> {
 export async function getExistingById(userId: number): Promise<User> {
   const user = await getById(userId);
   if (user === null) {
-    throw new UserNotFoundException(`User id=${userId} was not found`);
+    return Promise.reject(new UserNotFoundException(`User id=${userId} was not found`));
   } else {
     return user;
   }
@@ -64,4 +64,5 @@ async function update(user: User): Promise<User> {
 }
 
 export class UserNotFoundException extends Error {
+  name = 'UserNotFoundException';
 }

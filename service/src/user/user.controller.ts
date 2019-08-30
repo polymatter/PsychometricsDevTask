@@ -6,43 +6,36 @@ import { UserNotFoundException } from './user.repository';
 export async function getPage(req: Request, res: Response) {
   const page = Number(req.query.page) || 0;
   const size = Number(req.query.size) || 20;
-  const users = await userRepository.getPage(page, size);
-  res.json(users);
+  userRepository.getPage(page, size)
+    .then((page) => res.json(page));
 }
 
 export async function get(req: Request, res: Response, next: NextFunction) {
-  handleErrors(res, next, async () => {
-    const userId = Number(req.params.userId);
-    const user = await userRepository.getExistingById(userId);
-    res.json(user);
-  });
+  const userId = Number(req.params.userId);
+  userRepository.getExistingById(userId)
+    .then((user) => res.json(user))
+    .catch((e) => handleErrors(e, res, next))
 }
 
 export async function save(req: Request, res: Response, next: NextFunction) {
-  handleErrors(res, next, async () => {
-    const user = req.body as User;
-    const updated = await userRepository.save(user);
-    res.json(updated);
-  });
+  const user = req.body as User;
+  userRepository.save(user)
+    .then((updated) => res.json(updated))
+    .catch((e) => handleErrors(e, res, next))
 }
 
-export async function deleteOne(userId: number, req: Request, res: Response, next: NextFunction) {
-  handleErrors(res, next, async () => {
-    const userId = Number(req.params.userId);
-    const deleted = await userRepository.deleteById(userId);
-    res.json(deleted);
-  });
+export async function deleteOne(req: Request, res: Response, next: NextFunction) {
+  const userId = Number(req.params.userId);
+  userRepository.deleteById(userId)
+    .then((deleted) => res.json(deleted))
+    .catch((e) => handleErrors(e, res, next))
 }
 
-function handleErrors(res: Response, next: NextFunction, action: () => void) {
-  try {
-    action();
-  } catch (e) {
-    if (e instanceof UserNotFoundException) {
-      res.status(404);
-      res.json({ error: e.message });
-    } else {
-      next(e);
-    }
+function handleErrors(e: Error, res: Response, next: NextFunction) {
+  if (e instanceof UserNotFoundException) {
+    res.status(404);
+    res.json({ error: e.name, status: 404, cause: e.message });
+  } else {
+    next(e);
   }
 }
