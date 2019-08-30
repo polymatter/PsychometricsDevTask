@@ -10,6 +10,8 @@ app.set('port', process.env.PORT || 8080);
 app.use(compression());
 app.use(bodyParser.json());
 
+app.set('json spaces', 2);
+
 app.get('/users', userController.getPage);
 app.get('/users/:userId', userController.get);
 app.post('/users', userController.save);

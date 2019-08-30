@@ -6,10 +6,8 @@ import * as userRepository from './user.repository';
 import { UserNotFoundException } from './user.repository';
 
 export function getPage(req: Request, res: Response, next: NextFunction) {
-  const page = Number(req.query.page) || 0;
-  const size = Number(req.query.size) || 20;
-  const sort = Sort.fromString(req.query.sort) || new Sort('id', Direction.ASC);
-  userRepository.getPage(new Pageable(page, size, sort))
+  const pageable = Pageable.from(req.query, new Pageable(0, 20, new Sort('id', Direction.ASC)));
+  userRepository.getPage(pageable)
     .then((page) => res.json(page))
     .catch((e) => handleErrors(e, res, next));
 }

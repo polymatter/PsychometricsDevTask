@@ -17,12 +17,12 @@ export async function getPage(pageable: Pageable): Promise<Page<User>> {
     });
 }
 
-async function countAll(): Promise<number> {
+function countAll(): Promise<number> {
   const sql = 'SELECT COUNT(*) countAll FROM `user`';
   return db.query<any>(sql).then((r) => r.length === 1 ? r[0].count : null);
 }
 
-export async function getById(userId: number): Promise<User | null> {
+export function getById(userId: number): Promise<User | null> {
   const sql = 'SELECT id, birth_date birthDate, first_name firstName, last_name lastName, gender, created ' +
     'FROM `user` WHERE id = ?';
   return db.query(sql, [userId])
@@ -54,13 +54,13 @@ export async function save(user: User): Promise<User> {
   }
 }
 
-async function create(user: User): Promise<User> {
+function create(user: User): Promise<User> {
   const sql = 'INSERT INTO `user` (id, birth_date, first_name, last_name, gender, created) VALUES (?, ?, ?, ?, ?, ?)';
   return db.exec(sql, Object.values(user))
     .then((r) => getExistingById(r.lastID));
 }
 
-async function update(user: User): Promise<User> {
+function update(user: User): Promise<User> {
   const sql = 'UPDATE `user` SET id = ?, birth_date = ?, first_name = ?, last_name = ?, gender = ?, created = ? ' +
     'WHERE id = ?';
   return db.exec(sql, Object.values(user).concat(user.id))

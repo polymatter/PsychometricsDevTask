@@ -19,7 +19,7 @@ function readFixture(file: string): Promise<string> {
   });
 }
 
-async function runScript(sql: string): Promise<number> {
+function runScript(sql: string): Promise<number> {
   return new Promise((resolve) => {
     db.exec(sql, (e) => {
       if (e) {
@@ -30,7 +30,7 @@ async function runScript(sql: string): Promise<number> {
   });
 }
 
-export async function exec(sql: string, params: any): Promise<RunResult> {
+export function exec(sql: string, params: any): Promise<RunResult> {
   return new Promise((resolve) => {
     db.run(sql, params, function (e) {
       if (e) {
@@ -41,7 +41,7 @@ export async function exec(sql: string, params: any): Promise<RunResult> {
   });
 }
 
-export async function query<T>(sql: string, params?: any): Promise<T[]> {
+export function query<T>(sql: string, params?: any): Promise<T[]> {
   return new Promise((resolve) => {
     db.all(sql, params, (e, rows: T[]) => {
       if (e) {
