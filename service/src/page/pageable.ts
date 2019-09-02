@@ -6,9 +6,9 @@ export class Pageable {
   }
 
   static from(obj: any, def: Pageable) {
-    let page = Number(obj.page) || def.page;
-    let size = Number(obj.size) || def.size;
-    let sort = Sort.from(obj.sort) || def.sort;
+    const page = Number(obj.page) || def.page;
+    const size = Number(obj.size) || def.size;
+    const sort = Sort.from(obj.sort) || def.sort;
     return new Pageable(page, size, sort);
   }
 

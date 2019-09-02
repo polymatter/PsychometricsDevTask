@@ -32,7 +32,7 @@ function runScript(sql: string): Promise<number> {
 
 export function exec(sql: string, params: any): Promise<RunResult> {
   return new Promise((resolve) => {
-    db.run(sql, params, function (e) {
+    db.run(sql, params, function(e) {
       if (e) {
         throw e;
       }

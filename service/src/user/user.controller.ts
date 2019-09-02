@@ -16,21 +16,21 @@ export function get(req: Request, res: Response, next: NextFunction) {
   const userId = Number(req.params.userId);
   userRepository.getExistingById(userId)
     .then((user) => res.json(user))
-    .catch((e) => handleErrors(e, res, next))
+    .catch((e) => handleErrors(e, res, next));
 }
 
 export function save(req: Request, res: Response, next: NextFunction) {
   const user = req.body as User;
   userRepository.save(user)
     .then((updated) => res.json(updated))
-    .catch((e) => handleErrors(e, res, next))
+    .catch((e) => handleErrors(e, res, next));
 }
 
 export function deleteOne(req: Request, res: Response, next: NextFunction) {
   const userId = Number(req.params.userId);
   userRepository.deleteById(userId)
     .then((deleted) => res.json(deleted))
-    .catch((e) => handleErrors(e, res, next))
+    .catch((e) => handleErrors(e, res, next));
 }
 
 function handleErrors(e: Error, res: Response, next: NextFunction) {

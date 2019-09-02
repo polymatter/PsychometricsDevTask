@@ -26,7 +26,7 @@ export function getById(userId: number): Promise<User | null> {
   const sql = 'SELECT id, birth_date birthDate, first_name firstName, last_name lastName, gender, created ' +
     'FROM `user` WHERE id = ?';
   return db.query(sql, [userId])
-    .then((users: User[]) => users.length == 0 ? null : users[0]);
+    .then((users: User[]) => users.length === 0 ? null : users[0]);
 }
 
 export async function getExistingById(userId: number): Promise<User> {
