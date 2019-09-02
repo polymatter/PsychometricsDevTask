@@ -19,12 +19,23 @@ export function get(req: Request, res: Response, next: NextFunction) {
     .catch((e) => handleErrors(e, res, next));
 }
 
-export function save(req: Request, res: Response, next: NextFunction) {
+export function create(req: Request, res: Response, next: NextFunction) {
+  const user = req.body as User;
+  userRepository.save(user)
+    .then((updated) => {
+      res.status(201);
+      res.json(updated);
+    })
+    .catch((e) => handleErrors(e, res, next));
+}
+
+export function update(req: Request, res: Response, next: NextFunction) {
   const user = req.body as User;
   userRepository.save(user)
     .then((updated) => res.json(updated))
     .catch((e) => handleErrors(e, res, next));
 }
+
 
 export function deleteOne(req: Request, res: Response, next: NextFunction) {
   const userId = Number(req.params.userId);
