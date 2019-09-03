@@ -65,6 +65,7 @@ Evaluation criteria
     - Things are named in a way that makes sense
     - Code adheres at minimum to [single responsibility principle](https://en.wikipedia.org/wiki/SOLID).
     - Forms are validated on client-side
+    - Rxjs is used correctly and no unnecessary requests made to the backend
     - User module is used to group user-related things and is lazily loaded in the app (for future extensibility)
     - Application updates website metadata (title and description) when performing actions
     - Application uses router to store some state in the url (e.g. to allow bookmarking specific users)
