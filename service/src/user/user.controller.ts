@@ -40,7 +40,7 @@ export function update(req: Request, res: Response, next: NextFunction) {
 export function deleteOne(req: Request, res: Response, next: NextFunction) {
   const userId = Number(req.params.userId);
   userRepository.deleteById(userId)
-    .then((deleted) => res.json(deleted))
+    .then((deleted) => res.status(204))
     .catch((e) => handleErrors(e, res, next));
 }
 
