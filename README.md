@@ -51,9 +51,9 @@ its methods, which are:
 4. Create your angular app in `./website` directory in the project 
 
 5. After you are done push your changes to your forked repository and create a pull request to master branch on 
-https://github.com/campsych/campsych-task-frontend 
+https://github.com/campsych/frontend-dev-task 
 
-6. You can report issues/questions on https://github.com/campsych/campsych-task-frontend/issues
+6. You can report issues/questions on https://github.com/campsych/frontend-dev-task/issues
 
 
 Evaluation criteria
