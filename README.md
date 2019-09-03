@@ -18,10 +18,10 @@ The requirements of the app are:
 - use SCSS for writing styles
 
 
-Steps to do
-===========
+Steps to follow
+===============
 
-1. Fork this GIT repository
+1. Fork this GIT repository and clone the forked version locally
 
 2. Run the service:
         
@@ -43,10 +43,10 @@ its methods, which are:
     To create a new user. Expects [User](./service/src/user/user.ts) object in a request body.
         
     - `PUT http://localhost:8080/users/{userId}`
-    To update existing user, expects [User](./service/src/user/user.ts) object in a request body, returns updated User.        
+    To update a user, expects [User](./service/src/user/user.ts) object in a request body, returns updated User.        
         
     - `DELETE http://localhost:8080/users/{userId}`
-    To delete existing user, returns deleted [User](./service/src/user/user.ts).        
+    To delete a user, returns nothing.
 
 4. Create your angular app in `./website` directory in the project 
 
@@ -59,23 +59,19 @@ https://github.com/campsych/campsych-task-frontend
 Evaluation criteria
 ===================
 
-This task is more about the effort taken to deliver a working solution rather than ticking all the boxes. 
-Having less prior experience with Angular and Material is taken into account if indicated so in the resume 
-although there is plenty of tutorials and example code online which could help with learning or catching up. 
-
 1. Use of Angular/TypeScript
     - [Style guide](https://angular.io/guide/styleguide) was followed.
     - Services are used for all not explicitly view-related logic
     - Things are named in a way that makes sense
     - Code adheres at minimum to [single responsibility principle](https://en.wikipedia.org/wiki/SOLID).
     - Forms are validated on client-side
-    - User module is used to group user-related things and is lazily loaded in the app for future extensibility
+    - User module is used to group user-related things and is lazily loaded in the app (for future extensibility)
     - Application updates website metadata (title and description) when performing actions
     - Application uses router to store some state in the url (e.g. to allow bookmarking specific users)
     - Application handles errors well - broken connectivity to the service, unexpected errors coming from the service, 
     wrong user-typed urls etc.
-    - Application uses [service worker](https://angular.io/guide/service-worker-intro)
-    - Application uses [server-side rendering](https://angular.io/guide/universal])
+    - Application provides a [service worker](https://angular.io/guide/service-worker-intro)
+    - Application provides [server-side rendering](https://angular.io/guide/universal])
 
 2. Use of HTML5
     - Conforms to HTML5 spec w/o using depreciated tags/attributes 
@@ -88,22 +84,26 @@ although there is plenty of tutorials and example code online which could help w
     - No vendor prefixes, no [BEM](http://getbem.com/)   
     - Variables and other SCSS features used where needed
     - Resulting CSS works on mobile devices, 4k screens or ultrawide displays as well as on standard desktop
-    - The design is pleasing
     
 4. Use of GIT
-    - Actual pull-request was made to this repo  
+    - Actual pull request was made to this repo after the work finished  
     - Commits are descriptive of actual changes made
     - Commits are sufficiently granulated
-    - Commit history could be understood
-    - There are no unneeded files committed - IDE files, system files, generated artifacts from build process.
+    - Commit history makes common sense
+    - There are no unneeded files committed - IDE files, system files, generated artifacts from build process
     
 5. General
     - Application builds
     - Application passes lint checks
+    - The design is pleasing and usable
     - Page runs quickly and there are no heavy assets used (e.g. non-optimized images)
-    - There was an additional effort going beyond the requirements - e.g. proposed search or filtering, 
-     alternative presentation of user list, modifications to the provided backend service to fix possible bugs or 
+    - There was an additional effort going beyond the requirements - e.g. proposed features, 
+     different design, modifications were made to the provided backend service to fix possible bugs or 
      improve it 
+
+Having less prior experience with Angular and Material is taken into account if indicated so in the resume 
+although there is plenty of tutorials and example code online which could help with learning or catching up. 
+In the end it is all about the effort put into the task to deliver a working solution. 
 
 Disclaimer
 ==========
