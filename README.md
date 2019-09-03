@@ -98,6 +98,7 @@ Evaluation criteria
     - Application passes lint checks
     - The design is pleasing and usable
     - Page runs quickly and there are no heavy assets used (e.g. non-optimized images)
+    - There are unit (karma) and e2e (protractor) tests in place, they actually test things and are passing
     - There was an additional effort going beyond the requirements - e.g. proposed features, 
      different design, modifications were made to the provided backend service to fix possible bugs or 
      improve it 
