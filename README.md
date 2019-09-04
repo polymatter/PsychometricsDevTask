@@ -1,9 +1,13 @@
 The Psychometrics Centre - Front end developer task
 ---------------------------------------------------
 
-Overview
+Purpose
 ========
 
+This task is typical of the kind of work that a front-end developer might need to do at the Psychometrics Centre. We will take your performance on this task into consideration as part of your application. There is no time limit but we estimate that you should not spend longer than 3 days to complete it (working on and off with breaks).
+
+Overview
+========
 In this repository there is a service that deals with basic operations on users. 
 The goal is to design and implement a front-end app using the latest version of [Angular](https://angular.io/) and 
 [Angular Material](https://material.angular.io/) 
@@ -65,7 +69,7 @@ Evaluation criteria
     - Things are named in a way that makes sense
     - Code adheres at minimum to [single responsibility principle](https://en.wikipedia.org/wiki/SOLID).
     - Forms are validated on client-side
-    - Rxjs is used correctly and no unnecessary requests made to the backend
+    - Rxjs is used correctly and no unnecessary requests are made to the backend
     - User module is used to group user-related things and is lazily loaded in the app (for future extensibility)
     - Application updates website metadata (title and description) when performing actions
     - Application uses router to store some state in the url (e.g. to allow bookmarking specific users)
@@ -75,7 +79,7 @@ Evaluation criteria
     - Application provides [server-side rendering](https://angular.io/guide/universal])
 
 2. Use of HTML5
-    - Conforms to HTML5 spec w/o using depreciated tags/attributes 
+    - Conforms to HTML5 spec w/o using deprecated tags/attributes 
     - There are no unnecessary tags and nesting is not too deep
     - Is only semantic and does not contain presentation elements
     
@@ -103,11 +107,9 @@ Evaluation criteria
      different design, modifications were made to the provided backend service to fix possible bugs or 
      improve it 
 
-Having less prior experience with Angular and Material is taken into account if indicated so in the resume 
-although there is plenty of tutorials and example code online which could help with learning or catching up. 
-In the end it is all about the effort put into the task to deliver a working solution. 
+If you have indicated on your application that you have less prior experience with Angular and Material then we will take this into account. There are also plenty of tutorials and example code online which could help with learning or catching up. 
+In the end we are looking to evaluate your programming skills and your ability to deliver a working solution. 
 
 Disclaimer
 ==========
-The user database that comes with the service is randomly generated and doesn't contain information about any 
-existing persons.
+The user database that comes with the service is randomly generated and doesn't contain any personally identifiable information.
