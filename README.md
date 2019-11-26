@@ -76,7 +76,7 @@ Evaluation criteria
     - Application handles errors well - broken connectivity to the service, unexpected errors coming from the service, 
     wrong user-typed urls etc.
     - Application provides a [service worker](https://angular.io/guide/service-worker-intro)
-    - Application provides [server-side rendering](https://angular.io/guide/universal])
+    - Application provides [server-side rendering](https://angular.io/guide/universal)
 
 2. Use of HTML5
     - Conforms to HTML5 spec w/o using deprecated tags/attributes 
