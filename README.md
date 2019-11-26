@@ -16,11 +16,10 @@ The requirements of the app are:
 
 - allow browsing the list of users
 - allow adding a new user
+- allow viewing existing user
 - allow updating existing user
 - allow deleting existing user
-- make it work equally well on mobile devices and high resolution displays
-- use SCSS for writing styles
-
+- is usable and works well on mobile devices and high resolution displays
 
 Steps to follow
 ===============
@@ -59,45 +58,10 @@ https://github.com/campsych/frontend-dev-task
 
 6. You can report issues/questions on https://github.com/campsych/frontend-dev-task/issues
 
-
 Evaluation criteria
 ===================
 
-1. Use of Angular/TypeScript
-    - [Style guide](https://angular.io/guide/styleguide) was followed.
-    - Services are used for all not explicitly view-related logic
-    - Things are named in a way that makes sense
-    - Code adheres at minimum to [single responsibility principle](https://en.wikipedia.org/wiki/SOLID).
-    - Forms are validated on client-side
-    - Rxjs is used correctly and no unnecessary requests are made to the backend
-    - User module is used to group user-related things and is lazily loaded in the app (for future extensibility)
-    - Application updates website metadata (title and description) when performing actions
-    - Application uses router to store some state in the url (e.g. to allow bookmarking specific users)
-    - Application handles errors well - broken connectivity to the service, unexpected errors coming from the service, 
-    wrong user-typed urls etc.
-    - Application provides a [service worker](https://angular.io/guide/service-worker-intro)
-    - Application provides [server-side rendering](https://angular.io/guide/universal)
-
-2. Use of HTML5
-    - Conforms to HTML5 spec w/o using deprecated tags/attributes 
-    - There are no unnecessary tags and nesting is not too deep
-    - Is only semantic and does not contain presentation elements
-    
-3. Use of SCSS
-    - There are no unnecessary selectors
-    - Selector names are semantic or just make common sense
-    - No vendor prefixes, no [BEM](http://getbem.com/)   
-    - Variables and other SCSS features used where needed
-    - Resulting CSS works on mobile devices, 4k screens or ultrawide displays as well as on standard desktop
-    
-4. Use of GIT
-    - Actual pull request was made to this repo after the work finished  
-    - Commits are descriptive of actual changes made
-    - Commits are sufficiently granulated
-    - Commit history makes common sense
-    - There are no unneeded files committed - IDE files, system files, generated artifacts from build process
-    
-5. General
+1. General
     - Application builds
     - Application fulfills the requirements
     - Application passes lint checks
@@ -108,6 +72,41 @@ Evaluation criteria
      different design, modifications were made to the provided backend service to fix possible bugs or 
      improve it 
 
+2. Use of Angular/TypeScript
+    - [Style guide](https://angular.io/guide/styleguide) was followed
+    - Services are used for all not explicitly view-related logic
+    - Things are named in a way that makes sense
+    - Code adheres at minimum to [single responsibility principle](https://en.wikipedia.org/wiki/SOLID).
+    - Forms are validated client-side
+    - Rxjs is used correctly and no unnecessary requests are made to the backend
+    - User module is used to group user-related things and is lazily loaded in the app (for future extensibility)
+    - Application updates website metadata (title and description) when performing actions
+    - Application stores state in the url (e.g. to allow bookmarking specific users, page in the list, etc.)
+    - Application handles errors well - broken connectivity to the service, unexpected errors coming from the service, 
+    wrong user-typed urls etc.
+    - Application provides a [service worker](https://angular.io/guide/service-worker-intro)
+    - Application provides [server-side rendering](https://angular.io/guide/universal)
+
+3. Use of HTML5
+    - Conforms to HTML5 spec w/o using deprecated tags/attributes 
+    - There are no unnecessary tags and nesting is not too deep
+    - Is semantic and does not contain presentation elements
+    - Is accessible (e.g. screen reader friendly)
+    
+4. Use of SCSS
+    - There are no unnecessary selectors
+    - Selector names are semantic or just make common sense
+    - No vendor prefixes, no [BEM](http://getbem.com/)   
+    - Variables and other SCSS features used where needed
+    - Resulting CSS works on mobile devices, 4k screens or ultrawide displays as well as on standard desktop
+    
+5. Use of GIT
+    - Actual pull request was made to this repo after the work finished  
+    - Commits are descriptive of actual changes made
+    - Commits are sufficiently granulated
+    - Commit history makes common sense
+    - There are no unneeded files committed - IDE files, system files, generated artifacts from build process
+    
 If you have indicated on your application that you have less prior experience with Angular and Material then we will take this into account. There are also plenty of tutorials and example code online which could help with learning or catching up. 
 In the end we are looking to evaluate your programming skills and your ability to deliver a working solution. 
 
