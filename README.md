@@ -4,7 +4,7 @@ The Psychometrics Centre - Front end developer task
 Purpose
 ========
 
-This task is typical of the kind of work that a front-end developer might need to do at the Psychometrics Centre. We will take your performance on this task into consideration as part of your application. There is no time limit but we estimate that you should not spend longer than 3 days to complete it (working on and off with breaks).
+This task is typical of the kind of work that a front-end developer might need to do at the Psychometrics Centre. We will take your performance on this task into consideration as part of your application. There is no time limit but we expect that this task could be done in under a day.
 
 Overview
 ========
