@@ -20,7 +20,7 @@ The requirements of the app are:
 Steps to follow
 ===============
 
-1. On GitHub make a fork this GIT repository and clone your forked version to your local development machine
+1. On your computer create a local git repository with the code provided for this task. Do initial commit of this code. All your further commits should go to this local repository.
 
 2. Run the service:
         
@@ -50,8 +50,7 @@ its methods, which are:
 
 4. Create your angular app in `./website` directory in the project 
 
-5. After you are done push your changes to your repository and create a pull request to master branch on 
-https://github.com/campsych/frontend-dev-task 
+5. After you are done publish the repository to GitHub and send us the link, or make a zip of your whole local repository (including .git folder for commit history) and send it to us.
 
 6. You can report issues/questions on https://github.com/campsych/frontend-dev-task/issues
 
@@ -90,7 +89,6 @@ Evaluation criteria
     - Variables and other SCSS features used where needed
     
 5. Use of GIT
-    - Actual pull request was made to this repo after the work finished  
     - Commits are descriptive of actual changes made
     - Commits are sufficiently granulated
     - Commit history makes common sense
