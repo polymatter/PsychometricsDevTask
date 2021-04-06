@@ -15,6 +15,7 @@ The requirements of the app are:
 
 - allow browsing the list of users with pagination
 - allow adding a new user
+- allow deleting an user
 
 Steps to follow
 ===============
