@@ -60,7 +60,7 @@ Evaluation criteria
 
 1. General
     - Application builds
-    - Application fulfills the requirements
+    - Application fulfills (or surpasses) the requirements
     - Application passes lint checks
     - There are unit (karma) and e2e (protractor) tests in place, which actually test things and are passing
 
