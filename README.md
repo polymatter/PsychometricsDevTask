@@ -9,30 +9,26 @@ This task is typical of the kind of work that a front-end developer might need t
 Overview
 ========
 In this repository there is a service that deals with basic operations on users. 
-The goal is to design and implement a front-end app using the latest version of [Angular](https://angular.io/) and 
-[Angular Material](https://material.angular.io/) 
+The goal is to design and implement a front-end app using the latest version of [Angular](https://angular.io/)
 
 The requirements of the app are:
 
-- allow browsing the list of users
+- allow browsing the list of users with pagination
 - allow adding a new user
-- allow viewing existing user
-- allow updating existing user
-- allow deleting existing user
-- is usable and works well on mobile devices and high resolution displays
 
 Steps to follow
 ===============
 
-1. Fork this GIT repository and clone the forked version locally
+1. On GitHub make a fork this GIT repository and clone your forked version to your local development machine
 
 2. Run the service:
         
         cd ./service
         npm i
+        npm run build
         npm start
         
-3. The service listens for requests on http://localhost:8080 and expects and returns `application/json` content type from 
+3. Once started the service listens for requests on http://localhost:8080 and expects and returns `application/json` content type from 
 its methods, which are:
 
     - `GET http://localhost:8080/users`
@@ -53,7 +49,7 @@ its methods, which are:
 
 4. Create your angular app in `./website` directory in the project 
 
-5. After you are done push your changes to your forked repository and create a pull request to master branch on 
+5. After you are done push your changes to your repository and create a pull request to master branch on 
 https://github.com/campsych/frontend-dev-task 
 
 6. You can report issues/questions on https://github.com/campsych/frontend-dev-task/issues
@@ -65,27 +61,20 @@ Evaluation criteria
     - Application builds
     - Application fulfills the requirements
     - Application passes lint checks
-    - The design is pleasing and usable
-    - Page runs quickly and there are no heavy assets used (e.g. non-optimized images) nor unnecessary network traffic
-    - There are unit (karma) and e2e (protractor) tests in place, they actually test things and are passing
-    - There was an additional effort going beyond the requirements - e.g. proposed features, 
-     different design, modifications were made to the provided backend service to fix possible bugs or 
-     improve it 
+    - There are unit (karma) and e2e (protractor) tests in place, which actually test things and are passing
 
 2. Use of Angular/TypeScript
-    - [Style guide](https://angular.io/guide/styleguide) was followed
+    - [Style guide](https://angular.io/guide/styleguide) was followed and the code passes linting
     - Services are used for all not explicitly view-related logic
     - Things are named in a way that makes sense
-    - Code adheres at minimum to [single responsibility principle](https://en.wikipedia.org/wiki/SOLID).
+    - Code adheres to [single responsibility principle](https://en.wikipedia.org/wiki/SOLID).
     - Forms are validated client-side
     - Rxjs is used correctly and no unnecessary requests are made to the backend
     - User module is used to group user-related things and is lazily loaded in the app (for future extensibility)
-    - Application updates website metadata (title and description) when performing actions
     - Application stores state in the url (e.g. to allow bookmarking specific users, page in the list, etc.)
     - Application handles errors well - broken connectivity to the service, unexpected errors coming from the service, 
     wrong user-typed urls etc.
-    - Application provides a [service worker](https://angular.io/guide/service-worker-intro)
-    - Application provides [server-side rendering](https://angular.io/guide/universal)
+   - Application updates page metadata (title and description) when performing actions
 
 3. Use of HTML5
     - Conforms to HTML5 spec w/o using deprecated tags/attributes 
@@ -94,11 +83,10 @@ Evaluation criteria
     - Is accessible (e.g. screen reader friendly)
     
 4. Use of SCSS
-    - There are no unnecessary selectors
+    - There are no unnecessary rules and selectors
     - Selector names are semantic or just make common sense
     - No vendor prefixes, no [BEM](http://getbem.com/)   
     - Variables and other SCSS features used where needed
-    - Resulting CSS works on mobile devices, 4k screens or ultrawide displays as well as on standard desktop
     
 5. Use of GIT
     - Actual pull request was made to this repo after the work finished  
