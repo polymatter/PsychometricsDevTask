@@ -30,4 +30,8 @@ export class UserListComponent implements OnInit {
     this.http.get<UserService>(this.url)
       .subscribe(data => this.users = data.items);
   }
+
+  delete(id: number) {
+    this.http.delete(`${this.url}/${id}`);
+  }
 }
