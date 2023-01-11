@@ -7,6 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { UserListComponent } from './user-list/user-list.component';
 import { AppComponent } from './app.component';
 import { AddNewUserRowComponent } from './add-new-user-row/add-new-user-row.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,7 +18,8 @@ import { AddNewUserRowComponent } from './add-new-user-row/add-new-user-row.comp
     BrowserModule,
     HttpClientModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
