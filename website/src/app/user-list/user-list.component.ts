@@ -25,6 +25,7 @@ export class UserListComponent implements OnInit {
   url = "http://127.0.0.1:8080/users"
 
   users: UserDetails[] = [];
+  displayedColumns = [ 'id', 'birthDate', 'firstName', 'lastName', 'gender', 'created' ]
 
   ngOnInit(): void {
     this.http.get<UserService>(this.url)
